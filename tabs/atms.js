@@ -2,7 +2,7 @@ const atms = [
     { name: "Green ATM", rarity: "Common", price: 200},
     { name: "Blue ATM", rarity: "Common", price: 300},
     { name: "Purple ATM", rarity: "Uncommon", price: 500},
-    { name: "Red ATM", rarity: "Epic", price: 3000},
+    { name: "Red ATM", rarity: "Epic", price: 750},
     { name: "Gold ATM", rarity: "Mythic", price: 5000},
     { name: "Diamond ATM", rarity: "Legendary", price: 100000},
     { name: "Void ATM", rarity: "Legendary", price: 500000},
@@ -42,3 +42,4 @@ function renderATMs(sort = "high") {
 function sortATMs(order) {
     document.getElementById("page-container").innerHTML = renderATMs(order);
 }
+
