@@ -153,7 +153,6 @@ body::after{
     padding:10px;
     background:var(--panel);
     border:2px solid var(--border);
-    box-shadow:0 0 8px rgba(255,255,255,.08);
     transition:.3s;
 }
 
@@ -161,15 +160,6 @@ body::after{
     transform:translateY(-8px);
     border-color:var(--fg);
     box-shadow:0 0 40px rgba(255,255,255,.6);
-}
-
-.card:hover::after{
-    content:"";
-    position:absolute;
-    inset:-10px;
-    z-index:-1;
-    background:radial-gradient(circle,rgba(255,255,255,.2),transparent 60%);
-    animation:pulse 1s infinite;
 }
 
 .rarity,
@@ -189,19 +179,10 @@ body::after{
 .price-tag{left:6px;color:#0f0;border-color:#0f0;box-shadow:0 0 8px #0f0;text-shadow:0 0 5px #0f0}
 
 .rarity-common{color:#999;border-color:#999}
-.rarity-uncommon{color:#0f0;border-color:#0f0;text-shadow:0 0 10px #0f0}
+.rarity-uncommon{color:#0f0;border-color:#0f0}
 .rarity-epic{color:#c0f;border-color:#c0f}
-.rarity-legendary{color:#ff0;border-color:#ff0;text-shadow:0 0 15px #ff0}
-.rarity-mythic{color:#f00;border-color:#f00;text-shadow:0 0 10px #f00}
-
-.rarity-easy{color:#0f0;border-color:#0f0;text-shadow:0 0 10px #0f0}
-.rarity-medium{color:#ff0;border-color:#ff0;text-shadow:0 0 15px #ff0}
-.rarity-hard{color:#f00;border-color:#f00;text-shadow:0 0 10px #f00}
-
-.rarity-neutral{color:#0f0;border-color:#0f0;text-shadow:0 0 10px #0f0}
-.rarity-police{color:#00f;border-color:#00f;text-shadow:0 0 10px #00f}
-.rarity-criminal{color:#f00;border-color:#f00;text-shadow:0 0 10px #f00}
-.rarity-christmas-limited{color:#0f0;border-color:#f00}
+.rarity-legendary{color:#ff0;border-color:#ff0}
+.rarity-mythic{color:#f00;border-color:#f00}
 
 h2{
     margin:20px 0;
@@ -211,35 +192,7 @@ h2{
     text-shadow:0 0 10px var(--fg);
 }
 
-.sort-buttons{text-align:center;margin:15px 0}
-
-.sort-btn{
-    display:inline-block;
-    margin:0 4px 6px;
-    padding:5px 12px;
-    background:#000;
-    border:1px solid #666;
-    font-size:.8rem;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.sort-btn:hover,
-.sort-btn.active{
-    background:#333;
-    border-color:var(--fg);
-}
-
-.loading{
-    padding:60px 0;
-    text-align:center;
-    font-size:1.8rem;
-    animation:loading-glitch 1s infinite;
-    opacity:0;
-}
-
 .volume-control {
-    --fg: #ffffff; 
     position: fixed;
     top: 12px;
     left: 12px;
@@ -252,7 +205,7 @@ h2{
     border: 1px solid #444;
     border-radius: 6px;
     overflow: hidden;
-    transition: width .3s cubic-bezier(0.4,0,0.2,1), border-color .3s;
+    transition: width .3s ease;
 }
 
 .volume-control::before {
@@ -262,54 +215,16 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    color: #fff !important;
-    text-shadow: 0 0 5px #fff;
-    pointer-events: none;
+    color: #fff;
 }
 
-.volume-control:hover,
-.volume-control:focus-within {
-    width: 200px;
-    border-color: #fff !important;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.volume-control:hover {
+    width: 150px;
 }
 
-.volume-control input[type=range] {
-    flex: 1 1 auto;
-    width: 100%;
-    height: 6px;
-    background: #333;
-    border-radius: 3px;
-    appearance: none;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity .15s;
-    margin: 0 10px;
-}
-
-.volume-control input[type=range]::-webkit-slider-thumb {
-    appearance: none;
-    height: 14px;
-    width: 14px;
-    border-radius: 50%;
-    background: #ffffff; 
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-}
-
-.volume-control input[type=range]::-moz-range-thumb {
-    height: 14px;
-    width: 14px;
-    border-radius: 50%;
-    background: #ffffff;
-    cursor: pointer;
-    border: none;
-}
-
-.volume-control:hover input[type=range],
-.volume-control:focus-within input[type=range] {
-    opacity: 1;
+.volume-control input {
+    width: 100px;
+    margin-left: 10px;
 }
 
 .garage-intro{
@@ -322,30 +237,13 @@ h2{
     justify-content:center;
     background:#000;
     overflow:hidden;
-    cursor:pointer;
-    transition:opacity 1s ease-out;
+    transition: background 1s ease-out;
 }
 
-.garage-intro{
-    position:fixed;
-    inset:0;
-    z-index:99999;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    background:#000;
-    overflow:hidden;
-    cursor:pointer;
-    transition: background 1s ease-out; 
-}
-
-.garage-intro.open {
+.garage-intro.open{
     background: transparent;
-    pointer-events: none;
+    pointer-events:none;
 }
-
-.garage-intro.open{opacity:0;pointer-events:none;transition-delay:.7s}
 
 .garage-door-mover{
     position:absolute;
@@ -364,29 +262,8 @@ h2{
 .door-panel{
     flex:1;
     background:#333;
-    background-image:
-        linear-gradient(90deg,transparent 0 4%,rgba(255,255,255,.05) 5%,transparent 6%),
-        linear-gradient(to top,rgba(0,0,0,.3),transparent 50%),
-        radial-gradient(circle,#444 10%,#333 90%);
     border-bottom:2px solid #222;
-    box-shadow:inset 0 0 5px rgba(0,0,0,0.5);
-    filter: contrast(110%) brightness(90%);
-}
-
-.door-panel:last-child::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 25px;
-    background: repeating-linear-gradient(
-        45deg,
-        #f1c40f,
-        #f1c40f 15px,
-        #000 15px,
-        #000 30px
-    );
-    border-top: 3px solid #000;
+    background-image: linear-gradient(to top,rgba(0,0,0,.3),transparent 50%);
 }
 
 .biometric-terminal {
@@ -399,7 +276,6 @@ h2{
     background: #0a0a0a;
     border: 2px solid #333;
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0,0,0,1), inset 0 0 15px rgba(0,255,0,0.05);
 }
 
 .hand-scanner {
@@ -409,134 +285,44 @@ h2{
     border: 1px solid #444;
     position: relative;
     cursor: pointer;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s;
-}
-
-.hand-scanner:hover {
-    border-color: #0f0;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
 }
 
 .hand-scanner .fingerprint {
     width: 60px;
-    height: auto;
     filter: sepia(1) saturate(10) hue-rotate(90deg) opacity(0.3);
-    transition: 0.3s;
-    user-select: none;
-}
-
-.hand-scanner:hover .fingerprint {
-    filter: sepia(1) saturate(10) hue-rotate(90deg) opacity(0.8);
-    animation: pulse 1.5s infinite;
 }
 
 .hand-scanner .scan-line {
     position: absolute;
     width: 100%;
     height: 4px;
-    background: linear-gradient(to bottom, transparent, #0f0, transparent);
+    background: #0f0;
     box-shadow: 0 0 15px #0f0;
-    top: -10%;
-    left: 0;
+    top: 0;
     animation: scan-vertical 2s linear infinite;
-}
-
-.terminal-header {
-    font-size: 8px;
-    color: #0f0;
-    margin-bottom: 8px;
-    text-align: center;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.status-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-    margin-top: 10px;
-}
-
-.status-dot {
-    height: 4px;
-    background: #300;
-    border-radius: 2px;
-}
-
-.hand-scanner:hover ~ .status-grid .status-dot {
-    background: #030;
-    animation: status-blink 0.5s infinite alternate;
 }
 
 .click-prompt{
     position:absolute;
     bottom:40px;
     font-weight:bold;
-    letter-spacing:2px;
-    background: rgba(0,0,0,0.6);
-    padding: 10px 20px;
-    border: 1px solid #444;
-    text-shadow:0 0 5px #fff;
+    color: #fff;
     animation:blink 1s infinite;
 }
 
-.bottom-corner-link{
-    position:fixed;
-    bottom:8px;
-    left:8px;
-    z-index:1000;
-    padding:4px 8px;
-    font-size:.8rem;
-    color:var(--fg);
-    background:#111;
-    border:1px solid #444;
-    text-decoration:none;
-    box-shadow:0 0 5px rgba(255,255,255,.1);
-    transition:.2s;
-}
-
 @keyframes scan-vertical {
-    0% { top: -10%; }
-    100% { top: 110%; }
+    0% { top: 0%; }
+    100% { top: 100%; }
 }
 
-@keyframes status-blink {
-    0% { opacity: 1; }
-    100% { opacity: 0.3; }
-}
-
-@keyframes policeFlash{0%{opacity:0}10%{opacity:1}25%,50%,100%{opacity:0}}
+@keyframes blink{50%{opacity:0}}
 @keyframes scan{to{transform:translateY(8px)}}
 @keyframes static-burst{50%{opacity:.1}}
-@keyframes pulse{50%{opacity:.6}}
-@keyframes blink{0%,50%,100%{opacity:.7}25%,75%{opacity:0}}
-@keyframes loading-glitch{
-    0%{opacity:0;transform:none}
-    20%{opacity:1;transform:translate(-2px,2px)}
-    40%{opacity:.8;transform:translate(2px,-2px)}
-    60%{opacity:1;transform:translate(-2px,-2px)}
-    80%{opacity:.6;transform:translate(2px,2px)}
-    100%{opacity:0;transform:none}
-}
-
+@keyframes policeFlash{0%{opacity:0}10%{opacity:1}25%,50%,100%{opacity:0}}
 @keyframes garage-shudder {
-    0% { transform: translateY(0); }
-    2% { transform: translateY(-4px); }
-    4% { transform: translateY(0); }
-    6% { transform: translateY(-2px); }
-    8% { transform: translateY(0); }
+    0%, 100% { transform: translateY(-100vh); }
+    2%, 6% { transform: translateY(-99vh); }
 }
-
-@media(max-width:768px){
-    .page-wrapper{padding-top:160px}
-    .biometric-terminal { right: 50%; transform: translate(50%, -50%); top: 40%; }
-}
-
-@media(max-width:500px){
-    .page-wrapper{padding-top:220px} 
-}
-
