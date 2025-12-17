@@ -31,7 +31,7 @@ const valuables = [
     { name: "Emerald", rarity: "Mythic", price: 25000, weight: 4 },
     { name: "Amethyst", rarity: "Legendary", price: 30000, weight: 4 },
     { name: "Diamond", rarity: "Legendary", price: 50000, weight: 4 },
-    { name: "Bitcoin", rarity: "Legendary", price: 87500, weight: 1 },
+    { name: "Bitcoin", rarity: "Legendary", price: 92000, weight: 1 },
 ];
 
 function getSortPrice(item) {
@@ -91,4 +91,5 @@ function sortValuables(order) {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("page-container").innerHTML = renderValuables("high");
+
 });
