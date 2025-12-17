@@ -1,7 +1,7 @@
 const valuables = [
     { name: "Green Ornament", rarity: "Christmas-Limited", pricenc: 75, weight: 1 },
     { name: "Blue Ornament", rarity: "Christmas-Limited", pricenc: 100, weight: 1 },
-    { name: "Blue Ornament", rarity: "Christmas-Limited", pricenc: 125, weight: 1 },
+    { name: "Red Ornament", rarity: "Christmas-Limited", pricenc: 125, weight: 1 },
     { name: "Striped Ornament", rarity: "Christmas-Limited", pricenc: 275, weight: 1 },
     { name: "Candy Cane", rarity: "Christmas-Limited", pricenc: 777, weight: 2 },
     { name: "Gold Ornament", rarity: "Christmas-Limited", pricenc: 1000, weight: 1 },
@@ -94,4 +94,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("page-container").innerHTML = renderValuables("high");
 
 });
+
 
