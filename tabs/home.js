@@ -154,8 +154,12 @@ function renderHome() {
             }, 1600);
 
             setTimeout(() => {
+                const finalSound = new Audio("sounds/final.mp3");
+                finalSound.volume = 0.8;
+                finalSound.play().catch(() => {});
+
                 document.body.innerHTML = `
-                    <div id="reboot-screen" style="
+                    <div style="
                         position: fixed;
                         inset: 0;
                         background: black;
@@ -165,17 +169,31 @@ function renderHome() {
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        font-size: 1.1rem;
+                        font-size: 1.3rem;
                         text-align: center;
                         padding: 40px;
                         box-sizing: border-box;
+                        animation: glitch 1.5s infinite;
                     ">
-                        <div style="margin-bottom: 30px; opacity: 0.8;">rebooting system...</div>
-                        <div style="color: #ff3333; margin-bottom: 20px;">bootloader error</div>
-                        <div style="color: #ff3333;">no bootable media found</div>
+                        <div style="opacity: 0.6; margin-bottom: 40px;">[ CONNECTION LOST ]</div>
+                        <div style="margin-bottom: 30px;">attempting reconnection...</div>
+                        <div style="color: #ff3333; margin-bottom: 20px; font-size: 1.5rem;">FAILED</div>
+                        <div style="opacity: 0.4; font-size: 1rem;">signal terminated</div>
+                        <style>
+                        @keyframes glitch {
+                            0% { text-shadow: 0 0 10px #39ff14; clip: rect(0, 9999px, 0, 0); }
+                            5% { clip: rect(20px, 9999px, 40px, 0); text-shadow: -2px 0 #ff3333; }
+                            10% { clip: rect(80px, 9999px, 100px, 0); text-shadow: 2px 0 #39ff14; }
+                            15% { clip: rect(10px, 9999px, 30px, 0); }
+                            20% { clip: rect(50px, 9999px, 70px, 0); text-shadow: -2px 0 #ff3333; }
+                            25% { clip: rect(90px, 9999px, 110px, 0); }
+                            30% { text-shadow: 0 0 10px #39ff14; }
+                            100% { text-shadow: 0 0 10px #39ff14; }
+                        }
+                        </style>
                     </div>
                 `;
-            }, 2600);
+            }, 2100);
         };
 
         const commands = {
@@ -328,7 +346,7 @@ function renderHome() {
                 opacity: 0.9;
                 color: white;
             ">
-                WNTD. WIKI TERMINAL v4.7 — MEEPTECH CO.
+                WANTED WIKI TERMINAL v4.7 — MEEPTECH CO.
             </div>
             <div id="terminal-history" style="
                 max-height: 460px;
