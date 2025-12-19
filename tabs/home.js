@@ -142,21 +142,32 @@ function renderHome() {
                         position: fixed;
                         inset: 0;
                         background: black;
-                        color: #39ff14;
-                        font-family: 'Courier New', monospace;
+                        color: white;
+                        font-family: 'Courier New', 'Lucida Console', monospace;
+                        font-size: 1.4rem;
+                        line-height: 1.6;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        font-size: 1.3rem;
                         text-align: center;
                         padding: 40px;
                         box-sizing: border-box;
-                        text-shadow: 0 0 8px #39ff14;
+                        letter-spacing: 0.05em;
                     ">
-                        <div style="margin-bottom: 40px; opacity: 0.7;">rebooting system...</div>
-                        <div style="color: #ff3333; margin-bottom: 20px;">No bootable device found</div>
-                        <div style="opacity: 0.5; font-size: 1rem;">Insert boot media and restart</div>
+                        <div style="font-size: 1rem; color: #aaa; margin-bottom: 40px; letter-spacing: 0.2em;">
+                            *** SYSTEM FAILURE ***
+                        </div>
+                        <div style="margin-bottom: 30px;">
+                            No bootable device found.
+                        </div>
+                        <div style="font-size: 1.1rem; color: #ccc;">
+                            Insert boot media in selected boot device and press any key to retry.
+                        </div>
+                        <div style="margin-top: 60px; font-size: 0.9rem; color: #888;">
+                            SSHNUKE payload executed successfully.<br>
+                            All data has been permanently erased.
+                        </div>
                     </div>
                 `;
             }, 2100);
