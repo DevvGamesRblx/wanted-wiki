@@ -11,7 +11,6 @@ function renderHome() {
         let historyIndex = -1;
         let sudoMode = false;
         let isDead = false;
-        let idleTimer;
         const typeWrite = (text, color = "#39ff14", speed = 12) => {
             return new Promise(resolve => {
                 const line = document.createElement("div");
@@ -60,10 +59,6 @@ function renderHome() {
                     history.scrollTop = history.scrollHeight;
                 }, 60);
             });
-        };
-        const resetIdleTimer = () => {
-            clearTimeout(idleTimer);
-            idleTimer = setTimeout(powerOffSequence, 1000 * 60 * 6);
         };
         const powerOffSequence = async () => {
             if (isDead) return;
@@ -244,7 +239,6 @@ function renderHome() {
         };
         input.addEventListener("keydown", async (e) => {
             if (isDead) return;
-            resetIdleTimer();
             if (e.key === "ArrowUp") {
                 e.preventDefault();
                 if (historyIndex > 0) {
@@ -285,7 +279,6 @@ function renderHome() {
                 await typeWrite(`${cmd}: command not found`, "#ff3333");
             }
         });
-        resetIdleTimer();
     }, 0);
     return `
         <div style="min-height: 100vh; background: black; display: flex; flex-direction: column; font-family: 'Courier New', monospace;">
