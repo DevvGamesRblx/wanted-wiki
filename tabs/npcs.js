@@ -41,12 +41,12 @@ function renderNPCs(order = "az") {
     `;
     sorted.forEach(npc => {
         const slug = npc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        const safeTeam = npc.team.toLowerCase().replace(/\s+/g, "-");
+        const safeRarity = npc.team.toLowerCase().replace(/\s+/g, "-");
 
         html += `
             <div class="card">
                 <img src="images/${slug}.jpg" alt="${npc.name}" style="width:100%; height:auto; margin-bottom:15px; border-radius:4px; box-shadow:0 0 10px rgba(255,255,255,0.2);">
-                <div class="rarity rarity-${safeTeam}">${npc.team.toUpperCase()}</div>
+                <div class="rarity rarity-${safeRarity}">${npc.team}</div>
                 <h3>${npc.name}</h3>
                 <p><strong>Location:</strong> ${npc.location}</p>
                 <p><strong>Description:</strong> ${npc.desc}</p>
