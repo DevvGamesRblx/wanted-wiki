@@ -69,6 +69,16 @@ const missions = [
         reward: "$85,000" 
     },
 
+    { 
+        title: "Artisan 7", 
+        location: "Criminal Outpost – Talk to Erik", 
+        desc: "Let's get right into it. Set up the gun, test it out, and come back: Bring me a modded AWM with Reflex Sight, Mono Suppressor and Tactical Laser.", 
+        req: ["Criminal/Syndicate team"], 
+        how: "Mod the AWM with Reflex Sight, Mono Suppressor and Tactical Laser", 
+        difficulty: "Hard", 
+        reward: "$100,000" 
+    },
+
 
     { 
         title: "Fuel Depot", 
