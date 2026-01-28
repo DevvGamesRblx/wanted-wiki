@@ -1,6 +1,7 @@
 :root{
     --bg:#000;
     --fg:#fff;
+    --fg2:#000;
     --panel:#111;
     --border:#444;
     --glow:#fff;
@@ -27,21 +28,18 @@ body {
     background-attachment: fixed;
 }
 
-/* Responsive background for mobile devices */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
     }
 }
 
-/* Ensure background covers on very wide screens */
 @media (min-aspect-ratio: 21/9) {
     body {
         background-size: 100% auto;
     }
 }
 
-/* Ensure background covers on very tall screens */
 @media (max-aspect-ratio: 9/16) {
     body {
         background-size: auto 100%;
@@ -248,7 +246,7 @@ h2{
     text-align:center;
     font-size:clamp(1.5rem, 5vw, 2.2rem);
     letter-spacing:clamp(4px, 2vw, 10px);
-    text-shadow:0 0 10px var(--fg);
+    text-shadow:0 0 10px var(--fg2);
     text-transform: uppercase;
 }
 .sort-buttons{text-align:center;margin:15px 0}
