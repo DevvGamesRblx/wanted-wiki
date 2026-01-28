@@ -18,7 +18,7 @@ function renderHome() {
         <div style="min-height: 100vh; background: transparent; display: flex; flex-direction: column; font-family: 'Courier New', monospace;">
             <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; text-align: center; color: white; position: relative; overflow: hidden;">
                 <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%); pointer-events: none;"></div>
-                <h1 style="font-size: 3rem; letter-spacing: 0.6em; text-transform: uppercase; margin: 0 0 30px 0; color: white; text-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white; animation: flicker 4s infinite alternate;">WANTED WIKI</h1>
+                <h1 style="font-size: 3rem; letter-spacing: 0.6em; text-transform: uppercase; margin: 0 0 30px 0; color: white; text-shadow: 0 0 10px black, 0 0 20px white, 0 0 40px white, 0 0 80px white; animation: flicker 4s infinite alternate;">WANTED WIKI</h1>
                 <p style="font-size: 1.2rem; line-height: 1.8; max-width: 800px; opacity: 0.95; text-shadow: 0 0 8px white, 0 0 16px white; color: white; margin-bottom: 40px;">
                     Welcome to our wiki,<br>
                     here we log all the info about the game Wanted.
