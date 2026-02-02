@@ -9,14 +9,14 @@ function renderGunCrates(sort = "a-z") {
 
   const cards = sorted.map(item => {
     const slug = generateSlug(item.name);
-    // Added renderStat for Location and removed Rarity
+
     const content = `
       <h3>${item.name}</h3>
       ${renderStat('Contains', item.gun)}
       ${renderStat('Cooldown', item.cooldown)}
       ${renderStat('Location', item.location)}
     `;
-    
+
     return `
       <div class="card">
         <img src="images/${slug}.jpg" alt="${item.name}" 
