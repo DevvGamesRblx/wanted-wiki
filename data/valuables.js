@@ -12,6 +12,7 @@ const VALUABLES_DATA = [
   { name: "Silver Bar", rarity: "COMMON", price: 300, weight: 2 },
   { name: "PearWatch", rarity: "COMMON", price: 300, weight: 2 },
   { name: "HDD", rarity: "COMMON", price: 400, weight: 2 },
+  { name: "PearPods", rarity: "COMMON", price: 300, weight: 3 },
   { name: "PearPhone", rarity: "COMMON", price: 400, weight: 2 },
   { name: "PearPad", rarity: "COMMON", price: 600, weight: 3 },
   { name: "GoldPhone", rarity: "COMMON", price: 700, weight: 2 },
@@ -32,4 +33,5 @@ const VALUABLES_DATA = [
   { name: "Amethyst", rarity: "LEGENDARY", price: 30000, weight: 4 },
   { name: "Diamond", rarity: "LEGENDARY", price: 50000, weight: 4 },
   { name: "Bitcoin", rarity: "LEGENDARY", price: 92000, weight: 1 }
+
 ];
