@@ -6,6 +6,13 @@ const GUN_CRATES_DATA = [
     cooldown: "4 Days",
     location: "Syndicate Headquarters"
   },
+    {
+    id: "aug-a1-crate",
+    name: "AUG A1 Crate",
+    gun: "AUG with Mono Supressor and Tactical Laser",
+    cooldown: "4 Days",
+    location: "Crystal Club & Resort"
+  },
   {
     id: "uzi-crate",
     name: "Uzi Crate",
@@ -48,4 +55,5 @@ const GUN_CRATES_DATA = [
     cooldown: "5 Days",
     location: "Harris Airport"
   }
+
 ];
