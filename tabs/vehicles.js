@@ -28,7 +28,7 @@ function renderVehicles(sort = "high") {
     const content = `
       ${renderPriceTag(item.contractPrice)}
       <h3>${item.name}</h3>
-      ${renderStat('Repair (fully destroyed)', formatPrice(item.repairPrice))}
+      ${renderStat('Repair', formatPrice(item.repairPrice))}
       ${statsHtml}
     `;
     
@@ -51,4 +51,5 @@ function renderVehicles(sort = "high") {
 
 function sortVehicles(order) {
   document.getElementById("page-container").innerHTML = renderVehicles(order);
+
 }
