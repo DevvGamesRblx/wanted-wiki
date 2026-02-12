@@ -15,8 +15,9 @@ const VAULTS_DATA = [
   { name: "Sapphire Vault", rarity: "EPIC", rarityPercent: "~2.2%", priceMin: 40000, priceMax:500000 },
   { name: "Ruby Vault", rarity: "MYTHIC", rarityPercent: "~0.45%", priceMin: 80000, priceMax: 90000 },
   { name: "Emerald Vault", rarity: "LEGENDARY", rarityPercent: "~0.25%", priceMin: 125000, priceMax: 225000 },
-  { name: "Amethyst Vault", rarity: "LEGENDARY", rarityPercent: "~0.05%", priceMin: ?, priceMax: ? }
+  { name: "Amethyst Vault", rarity: "LEGENDARY", rarityPercent: "~0.05%", priceMin: null, priceMax: null }
 ];
+
 
 
 
