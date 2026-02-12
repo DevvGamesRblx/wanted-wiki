@@ -7,8 +7,9 @@ const CONTRIBUTORS_DATA = {
         { name: "", title: "" }
     ],
     contributors: [
-        { name: "", contributions: "" },
-        { name: "", contributions: " " },
+        { name: "RedRuby", contributions: "Vault Images" },
+        { name: "MeepMeep", contributions: "Vault Cash" },
         { name: "", contributions: "" }
     ]
 };
+
