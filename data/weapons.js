@@ -59,7 +59,7 @@ const GUNS_DATA = [
     name: "Benelli M1014",
     showMoreButton: true,
     reBuyPrice: 6000,
-    contractPrice: 40000,
+    contractPrice: 550000,
     stats: {
       ammo: "30/270",
       ammoPrice: "120$ for 6",
@@ -115,7 +115,7 @@ const GUNS_DATA = [
     name: "M4A1",
     showMoreButton: true,
     reBuyPrice: 8000,
-    contractPrice: 1400000,
+    contractPrice: 1600000,
     stats: {
       ammo: "30/420",
       ammoPrice: "600$ for 30",
@@ -246,7 +246,7 @@ const EXPLOSIVES_DATA = [
     name: "RPG-7",
     showMoreButton: true,
     reBuyPrice: 10000,
-    contractPrice: 1200000,
+    contractPrice: 1250000,
     stats: {
       ammo: "1/6",
       ammoPrice: "2000$ for 1",
@@ -280,4 +280,5 @@ const TOOLS_DATA = [
       ammoPrice: "15000$ for 1",
     }
   }
+
 ];
